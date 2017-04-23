@@ -1,0 +1,27 @@
+Regression
+    Predict values according to some given data. 
+
+Handling of categorical values (Dummy Variables)
+    Add a column for each categorical value and fill the table with 1 (variable fits) and 0 (variable doesn't fit)
+
+Simple Linear Regression
+    y: dependent variable which should be predicted
+    x_n: independent variable(s)
+    b_n: weight of the variable(s)
+
+    Formula:
+        y = b_0 + (b_1 * x_1)
+
+Multiple Linear Regression
+    ! ---- Assumptions ---- !
+    1. Linearity
+    2. Homosecedasiticity
+    3. Multivariate normality
+    4. Independence of errors
+    5. Lack of multicollinearity
+
+    Formula:
+        y = b_0 + (b_1 * x_1) + (b_2 * x_2) + ... + (b_n * x_n)
+
+
+
