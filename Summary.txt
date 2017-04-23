@@ -2,7 +2,11 @@ Regression
     Predict values according to some given data. 
 
 Handling of categorical values (Dummy Variables)
-    Add a column for each categorical value and fill the table with 1 (variable fits) and 0 (variable doesn't fit)
+-    Add a column for each categorical value and fill the table with 1 (variable fits) and 0 (variable          doesn't fit)
+    (TODO: Screenshot https://www.udemy.com/machinelearning/learn/v4/t/lecture/5772046?start=0 - 4:00)
+-   Dummy Variable Trap
+    Always omit one Dummy Variable!
+    --> 9 Dummy Variables --> Take 8 Dummy Variables in the Model
 
 Simple Linear Regression
     y: dependent variable which should be predicted
@@ -22,6 +26,33 @@ Multiple Linear Regression
 
     Formula:
         y = b_0 + (b_1 * x_1) + (b_2 * x_2) + ... + (b_n * x_n)
+    
+    Building a Model Step-By-Step (Selecting the right variables - Feature Selection) (See pdf)
+    1.  "All-in"
+        -   Take all variables.
+        -   Choose it because:
+            --> you know that you really need all of them.
+            --> you are preparing for Backward Elemination
 
+    2.  Backward Elemination (Stepwise Regression)
+        -   1. Select a significance level to stay in the model (e.g. SL = 0.05)
+            2. Fit the full model with all possible predictors
+            3. Consider the predictor with the highest P-value.
+               If P > SL, go to STEP 4. otherwise FINISHED
+            4. Remove the predictor
+            5. Fit the model without the removed predictor and go back to 3. (https://www.udemy.com/machinelearning/learn/v4/t/lecture/5772052?start=0 - 7:00)
+    
+    3.  Forward Selection (Stepwise Regression)
+        -   1. Select a significance level to enter the model (e.g. SL = 0.05)
+            2. Fit all simple regression models y ~ x_n and select the one with the lowest P-value
+            3. Keep this variable and fit all possible models with one extra predictor added to the one you already have.
+            4. Consider the predictor with the lowest P-value.
+               If P < SL, go to 3., otherwise FINISHED (!!! Keep the previous model !!!)
+    
+    4.  Bidirectional Elemination (Stepwise Regression)
+        -   1. Select a significance level  to enter AND to stay the model (e.g. SLENTER = 0.05, SLSTAY = 0.05)
+            2. Perform the next step of Forward Selection (New variables must have: P < SLENTER to enter)
+            3. Perform ALL steps of Backward Elemination (Old variables must have: P < SLSTAY to SLSTAY) 
+            4. If there were any changes (Fixpunkt noch nicht erreicht) go to 2., otherwise FINISH
 
 
