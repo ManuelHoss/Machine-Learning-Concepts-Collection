@@ -55,4 +55,8 @@ Multiple Linear Regression
             3. Perform ALL steps of Backward Elemination (Old variables must have: P < SLSTAY to SLSTAY) 
             4. If there were any changes (Fixpunkt noch nicht erreicht) go to 2., otherwise FINISH
 
+Polynomial (Linear) Regression
+    --> Linear because it depends on the "b's". (Only x's are polynomial)
 
+    Formula:
+        y = b_0 + (b_1 * x_1^1) + (b_2 * x_1^2) + ... + (b_n * x_1^n)
